@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body {
+    background: #008080;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+</style>
+</head>
+<body>
+<svg id="genz-gandhi-wallpaper" viewBox="0 0 500 500" width="480" height="480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Radial / Sunset -->
+    <radialGradient id="sunGlow" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#ffe600" stop-opacity="0.35"/>
+      <stop offset="50%" stop-color="#ff007f" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#008080" stop-opacity="0"/>
+    </radialGradient>
+    
+    <!-- Sunglasses Mirror Reflection -->
+    <linearGradient id="shadesGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff007f"/>
+      <stop offset="45%" stop-color="#7928ca"/>
+      <stop offset="70%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#00ffaa"/>
+    </linearGradient>
+
+    <!-- Halftone / Charkha Spoke Glow -->
+    <linearGradient id="charkhaGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffbe0b" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#fb5607" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <!-- Khadi Shawl Gradient -->
+    <linearGradient id="khadiGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fdfbf7"/>
+      <stop offset="50%" stop-color="#e2dad0"/>
+      <stop offset="100%" stop-color="#c5bcaf"/>
+    </linearGradient>
+
+    <!-- Skin Gradient -->
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8b991"/>
+      <stop offset="60%" stop-color="#d69a6c"/>
+      <stop offset="100%" stop-color="#ba7b4d"/>
+    </linearGradient>
+
+    <!-- Retro Badge Gradient -->
+    <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff0080"/>
+      <stop offset="100%" stop-color="#7928ca"/>
+    </linearGradient>
+
+    <filter id="retroShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="3" dy="5" stdDeviation="4" flood-color="#002222" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Aura Glow -->
+  <circle cx="250" cy="240" r="220" fill="url(#sunGlow)"/>
+
+  <!-- Stylized Charkha Halo (Spokes / Disc) -->
+  <g opacity="0.35" stroke="#ffbe0b" stroke-width="2" stroke-dasharray="4,6">
+    <circle cx="250" cy="220" r="170" fill="none"/>
+    <circle cx="250" cy="220" r="130" fill="none"/>
+    <!-- Charkha / Sunburst Spoke Lines -->
+    <line x1="250" y1="50" x2="250" y2="390"/>
+    <line x1="80" y1="220" x2="420" y2="220"/>
+    <line x1="130" y1="100" x2="370" y2="340"/>
+    <line x1="130" y1="340" x2="370" y2="100"/>
+    <line x1="90" y1="160" x2="410" y2="280"/>
+    <line x1="90" y1="280" x2="410" y2="160"/>
+    <line x1="160" y1="90" x2="340" y2="350"/>
+    <line x1="340" y1="90" x2="160" y2="350"/>
+  </g>
+
+  <!-- Character Group with Drop Shadow -->
+  <g filter="url(#retroShadow)">
+    <!-- Shoulders & Khadi Shawl (Streetwear Draping) -->
+    <path d="M120 450 Q160 350 210 330 Q250 345 290 330 Q340 350 380 450 Z" fill="url(#khadiGrad)" stroke="#a59c90" stroke-width="2"/>
+    <!-- Shawl Fold Lines -->
+    <path d="M170 380 Q220 370 250 430 Q280 370 330 380" fill="none" stroke="#b5aca0" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M140 420 Q200 400 240 450" fill="none" stroke="#b5aca0" stroke-width="2"/>
+    <path d="M360 420 Q300 400 260 450" fill="none" stroke="#b5aca0" stroke-width="2"/>
+
+    <!-- Enamel Badge: AHIMSA / PEACE VIBES -->
+    <g transform="translate(180, 390)">
+      <circle cx="16" cy="16" r="16" fill="url(#badgeGrad)" stroke="#fff" stroke-width="1.5"/>
+      <text x="16" y="19" font-family="'Courier New', monospace" font-size="8" font-weight="900" fill="#fff" text-anchor="middle" letter-spacing="0.5">AHIMSA</text>
+      <circle cx="16" cy="16" r="14" fill="none" stroke="#ffd700" stroke-width="0.8" stroke-dasharray="2,2"/>
+    </g>
+
+    <!-- Neck -->
+    <path d="M222 280 L222 345 Q250 355 278 345 L278 280 Z" fill="#c98d60"/>
+    <!-- Subtle Golden Chain / Lanyard (Gen Z style) -->
+    <path d="M224 330 Q250 355 276 330" fill="none" stroke="#ffd700" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Left Ear -->
+    <ellipse cx="188" cy="225" rx="14" ry="24" fill="url(#skinGrad)" stroke="#aa6f45" stroke-width="1.5"/>
+    <path d="M188 215 Q194 225 188 235" fill="none" stroke="#aa6f45" stroke-width="1.5"/>
+
+    <!-- Right Ear (with AirPod!) -->
+    <ellipse cx="312" cy="225" rx="14" ry="24" fill="url(#skinGrad)" stroke="#aa6f45" stroke-width="1.5"/>
+    <path d="M312 215 Q306 225 312 235" fill="none" stroke="#aa6f45" stroke-width="1.5"/>
+    
+    <!-- Gen Z AirPods in Right Ear -->
+    <g transform="translate(306, 220)">
+      <!-- Earbud Body -->
+      <ellipse cx="6" cy="6" rx="5.5" ry="5.5" fill="#ffffff" stroke="#dcdcdc" stroke-width="1"/>
+      <!-- Speaker grill / sensor dot -->
+      <circle cx="4" cy="5" r="1.2" fill="#555"/>
+      <!-- AirPod Stem -->
+      <rect x="4.5" y="8" width="3" height="13" rx="1.5" fill="#f8f8f8" stroke="#dcdcdc" stroke-width="0.8"/>
+      <!-- Silver Stem Tip -->
+      <rect x="4.5" y="19" width="3" height="2" rx="0.5" fill="#a0a0a0"/>
+      <!-- Glowing Blue/Cyan Bluetooth Indicator LED -->
+      <circle cx="6" cy="12" r="0.9" fill="#00ffff"/>
+    </g>
+
+    <!-- Head / Face -->
+    <path d="M192 210 C190 140 230 115 250 115 C270 115 310 140 308 210 C308 260 285 295 250 295 C215 295 192 260 192 210 Z" fill="url(#skinGrad)" stroke="#aa6f45" stroke-width="1.5"/>
+
+    <!-- Forehead Wisdom Lines -->
+    <path d="M228 155 Q250 150 272 155" fill="none" stroke="#ba7b4d" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M232 165 Q250 160 268 165" fill="none" stroke="#ba7b4d" stroke-width="1.2" stroke-linecap="round"/>
+
+    <!-- Eyebrows -->
+    <path d="M212 185 Q228 178 240 186" fill="none" stroke="#5d4037" stroke-width="3" stroke-linecap="round"/>
+    <path d="M288 185 Q272 178 260 186" fill="none" stroke="#5d4037" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Nose -->
+    <path d="M250 185 L247 228 Q242 235 245 237 Q250 239 255 237 Q258 235 253 228 Z" fill="#ba7b4d"/>
+
+    <!-- Iconic White/Silver Salt-and-Pepper Mustache -->
+    <path d="M232 254 Q250 248 268 254 Q278 262 265 264 Q250 256 235 264 Q222 262 232 254 Z" fill="#f0ebe5" stroke="#d5ceca" stroke-width="1"/>
+
+    <!-- Gentle Kind Smile -->
+    <path d="M237 270 Q250 276 263 270" fill="none" stroke="#683419" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Gen Z Holographic / Sunset Round Sunglasses -->
+    <!-- Gold Spectacle Bridge -->
+    <path d="M235 204 Q250 198 265 204" fill="none" stroke="#ffcc00" stroke-width="2.5"/>
+    <line x1="184" y1="202" x2="200" y2="204" stroke="#ffcc00" stroke-width="2.5"/>
+    <line x1="300" y1="204" x2="316" y2="202" stroke="#ffcc00" stroke-width="2.5"/>
+
+    <!-- Left Lens (Gen-Z Mirror Hologram) -->
+    <ellipse cx="218" cy="206" rx="18" ry="18" fill="url(#shadesGrad)" stroke="#ffcc00" stroke-width="2.5"/>
+    <!-- Sunglasses Glare / Slanted White Highlights -->
+    <path d="M206 195 L222 195 L214 219 L204 219 Z" fill="#ffffff" opacity="0.45"/>
+    <path d="M225 195 L231 195 L223 219 L217 219 Z" fill="#ffffff" opacity="0.3"/>
+
+    <!-- Right Lens (Gen-Z Mirror Hologram) -->
+    <ellipse cx="282" cy="206" rx="18" ry="18" fill="url(#shadesGrad)" stroke="#ffcc00" stroke-width="2.5"/>
+    <!-- Sunglasses Glare -->
+    <path d="M270 195 L286 195 L278 219 L268 219 Z" fill="#ffffff" opacity="0.45"/>
+    <path d="M289 195 L295 195 L287 219 L281 219 Z" fill="#ffffff" opacity="0.3"/>
+  </g>
+
+  <!-- Retro Typography Plaque / Banner -->
+  <g transform="translate(130, 435)">
+    <!-- 98 Style Beveled Plaque -->
+    <rect x="0" y="0" width="240" height="38" rx="4" fill="#c0c0c0" stroke="#ffffff" stroke-width="1.5"/>
+    <!-- Inset border -->
+    <rect x="2" y="2" width="236" height="34" rx="2" fill="#000080"/>
+    <!-- Text -->
+    <text x="120" y="18" font-family="'Pixelated MS Sans Serif', 'MS Sans Serif', Arial, sans-serif" font-size="12" font-weight="bold" fill="#00ffff" text-anchor="middle" letter-spacing="1">
+      ★ BAPU : GEN-Z EDITION ★
+    </text>
+    <text x="120" y="30" font-family="'Courier New', monospace" font-size="9.5" font-weight="bold" fill="#fffa65" text-anchor="middle" letter-spacing="0.5">
+      Satyagraha &bull; Ahimsa &bull; Y2K Safe
+    </text>
+  </g>
+</svg>
+</body>
+</html>

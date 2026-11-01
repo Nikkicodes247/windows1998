@@ -1,0 +1,260 @@
+/* ===== SHARMA-JI'S PC — OS STYLESHEET ===== */
+
+/* === Reset & Base === */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; overflow: hidden; font-family: 'Pixelated MS Sans Serif', 'Microsoft Sans Serif', 'MS Sans Serif', Arial, sans-serif; font-size: 11px; user-select: none; }
+.hidden { display: none !important; }
+
+/* === Power-On Screen === */
+#power-off-screen {
+  width: 100%; height: 100%; background: #000; display: flex; align-items: center; justify-content: center; position: fixed; top: 0; left: 0; z-index: 10000;
+}
+.power-btn {
+  font-size: 24px; padding: 20px 40px; background: #222; color: #0f0; border: 2px solid #0f0;
+  cursor: pointer; font-family: monospace; transition: all 0.3s;
+}
+.power-btn:hover { background: #0f0; color: #000; }
+
+/* === BIOS Screen === */
+#bios-screen {
+  width: 100%; height: 100%; background: #000; color: #aaa; font-family: 'Courier New', monospace;
+  font-size: 13px; padding: 20px; position: fixed; top: 0; left: 0; z-index: 9999; overflow: hidden; white-space: pre-wrap;
+}
+#bios-text .bios-highlight { color: #fff; }
+#bios-text .bios-warn { color: #ff0; }
+#bios-text .bios-ok { color: #0f0; }
+
+/* === BIOS Setup === */
+#bios-setup {
+  width: 100%; height: 100%; background: #0000aa; color: #fff; font-family: 'Courier New', monospace;
+  font-size: 14px; position: fixed; top: 0; left: 0; z-index: 9998; display: flex; align-items: center; justify-content: center;
+}
+.bios-setup-box {
+  border: 2px solid #aaa; padding: 20px; max-width: 500px; width: 90%;
+}
+.bios-title { text-align: center; font-size: 16px; margin-bottom: 16px; color: #ff0; font-weight: bold; }
+.bios-content p { margin: 4px 0; }
+.bios-blink { animation: blink 1s step-end infinite; color: #0f0; margin-top: 12px; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* === Splash Screen === */
+#splash-screen {
+  width: 100%; height: 100%; background: #008; position: fixed; top: 0; left: 0; z-index: 9997;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.splash-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 40px; }
+.win98-flag { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; width: 48px; height: 48px; transform: rotate(-10deg); }
+.flag-square { width: 22px; height: 22px; }
+.flag-square.red { background: #f00; }
+.flag-square.green { background: #0a0; }
+.flag-square.blue { background: #00f; }
+.flag-square.yellow { background: #ff0; }
+.splash-title { color: #fff; }
+.win-text { font-size: 36px; font-weight: 300; }
+.win-98 { font-size: 48px; font-weight: bold; margin-left: 4px; }
+.splash-bar-container { width: 200px; height: 18px; background: #333; border: 1px solid #555; overflow: hidden; }
+.splash-bar { width: 0%; height: 100%; background: linear-gradient(90deg, #008 0%, #0055aa 50%, #00aaff 100%); transition: width 0.3s; }
+
+/* === Login Screen === */
+#login-screen {
+  width: 100%; height: 100%; position: fixed; top: 0; left: 0; z-index: 9996;
+}
+.login-overlay {
+  width: 100%; height: 100%; background: #008080; display: flex; align-items: center; justify-content: center;
+}
+.login-window { width: 380px; }
+.login-body { display: flex; gap: 12px; padding: 12px; }
+.login-icon { font-size: 48px; }
+.login-fields { flex: 1; }
+.login-fields .field-row { margin-top: 6px; }
+.login-fields label { width: 80px; display: inline-block; }
+.login-fields input { width: 180px; }
+.login-buttons { display: flex; flex-direction: column; gap: 4px; padding-top: 20px; }
+.login-buttons button { width: 72px; }
+
+/* === Desktop === */
+#desktop {
+  width: 100%; height: 100%; background: #008080; position: fixed; top: 0; left: 0; z-index: 1;
+  display: flex; flex-direction: column;
+}
+
+/* === Desktop Wallpaper (Gen-Z Gandhiji Artwork) === */
+#desktop-wallpaper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 30px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  overflow: hidden;
+}
+#desktop-wallpaper svg {
+  max-width: min(85vw, 85vh);
+  max-height: min(85vw, 85vh);
+  width: 480px;
+  height: 480px;
+  opacity: 0.9;
+  filter: drop-shadow(0 12px 30px rgba(0,0,0,0.55));
+}
+
+/* === Desktop Icons === */
+#desktop-icons {
+  position: relative;
+  z-index: 1;
+  flex: 1; padding: 8px; display: flex; flex-direction: column; flex-wrap: wrap; align-content: flex-start; gap: 4px;
+  overflow: hidden;
+}
+.desktop-icon {
+  width: 76px; height: 70px; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+  cursor: pointer; padding: 4px; border: 1px solid transparent; text-align: center;
+}
+.desktop-icon:hover { background: rgba(255,255,255,0.1); }
+.desktop-icon.selected { background: #000080; color: #fff; border: 1px dotted #fff; }
+.desktop-icon .icon-img { font-size: 32px; line-height: 1; pointer-events: none; }
+.desktop-icon .icon-label { font-size: 10px; color: #fff; margin-top: 2px; word-wrap: break-word; max-width: 72px;
+  text-shadow: 1px 1px 1px #000; pointer-events: none; line-height: 1.2; }
+
+/* === Taskbar === */
+#taskbar {
+  height: 30px; background: #c0c0c0; border-top: 2px solid #fff;
+  display: flex; align-items: center; padding: 2px 4px; z-index: 9000; flex-shrink: 0;
+  box-shadow: inset 0 1px 0 #dfdfdf;
+}
+#start-button {
+  height: 24px; display: flex; align-items: center; gap: 3px; padding: 1px 6px;
+  font-weight: bold; font-size: 11px; flex-shrink: 0;
+}
+.start-logo { display: inline-flex; }
+.flag-tiny { display: inline-grid; grid-template-columns: 1fr 1fr; gap: 0px; width: 14px; height: 14px; }
+.ft-r { width: 7px; height: 7px; background: #f00; }
+.ft-g { width: 7px; height: 7px; background: #0a0; }
+.ft-b { width: 7px; height: 7px; background: #00f; }
+.ft-y { width: 7px; height: 7px; background: #ff0; }
+
+#taskbar-windows {
+  flex: 1; display: flex; gap: 2px; padding: 0 4px; overflow: hidden;
+}
+.taskbar-btn {
+  height: 22px; max-width: 160px; min-width: 40px; font-size: 11px;
+  text-overflow: ellipsis; overflow: hidden; white-space: nowrap; text-align: left;
+  padding: 1px 6px;
+}
+.taskbar-btn.active { font-weight: bold; }
+
+#tray {
+  display: flex; align-items: center; gap: 6px; padding: 2px 6px;
+  border-left: 1px solid #808080; height: 22px; background: #c0c0c0;
+  border: 1px inset;
+}
+#tray-volume { cursor: pointer; font-size: 14px; }
+#tray-clock { font-size: 11px; cursor: pointer; }
+
+/* === Start Menu === */
+#start-menu {
+  position: fixed; bottom: 30px; left: 0; z-index: 9500; width: 220px;
+}
+.start-menu-body { display: flex; padding: 0 !important; }
+.start-sidebar {
+  width: 24px; background: linear-gradient(to top, #000080, #1084d0);
+  display: flex; align-items: flex-end; justify-content: center; padding-bottom: 4px;
+}
+.sidebar-text {
+  writing-mode: vertical-rl; transform: rotate(180deg); color: #fff; font-size: 14px; letter-spacing: 1px;
+}
+.start-items { flex: 1; padding: 2px; }
+.start-item {
+  padding: 4px 8px; cursor: pointer; display: flex; align-items: center; gap: 6px;
+  position: relative; font-size: 11px;
+}
+.start-item:hover { background: #000080; color: #fff; }
+.start-item .arrow { margin-left: auto; }
+.start-item .submenu {
+  position: absolute; left: 100%; bottom: 0; width: 180px; z-index: 9501;
+}
+.start-item:hover > .submenu { display: block !important; }
+
+/* === Window Manager === */
+#windows-layer { position: absolute; top: 0; left: 0; width: 100%; height: calc(100% - 30px); pointer-events: none; }
+.wm-window { position: absolute; pointer-events: auto; min-width: 200px; min-height: 100px; box-shadow: 2px 2px 8px rgba(0,0,0,0.3); }
+.wm-window .title-bar { cursor: move; }
+.wm-window .window-body { overflow: auto; }
+.wm-window.minimized { display: none !important; }
+.wm-window.maximized { top: 0 !important; left: 0 !important; width: 100% !important; height: calc(100vh - 30px) !important; }
+
+/* === Context Menu === */
+#context-menu { position: fixed; z-index: 9400; width: 150px; }
+.ctx-item { padding: 3px 8px; cursor: pointer; font-size: 11px; }
+.ctx-item:hover { background: #000080; color: #fff; }
+
+/* === Run Dialog === */
+#run-dialog { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9600; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.2); }
+.run-window { width: 340px; }
+
+/* === Volume Popup === */
+#volume-popup { position: fixed; bottom: 36px; right: 50px; z-index: 9400; }
+#vol-slider-track { width: 20px; height: 80px; background: #c0c0c0; border: 1px inset; margin: 4px auto; position: relative; }
+#vol-slider-handle { position: absolute; width: 20px; text-align: center; cursor: pointer; font-size: 10px; top: 30px; transition: top 0.05s; }
+
+/* === BSOD === */
+#bsod-screen {
+  width: 100%; height: 100%; background: #0000aa; color: #fff; font-family: 'Courier New', monospace;
+  font-size: 14px; position: fixed; top: 0; left: 0; z-index: 9999; display: flex; align-items: center; justify-content: center;
+}
+.bsod-text { max-width: 600px; text-align: left; line-height: 1.6; }
+
+/* === Screensaver === */
+#screensaver-canvas {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9800; background: #000;
+}
+
+/* === Y2K Overlay === */
+#y2k-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9900;
+  background: #000; display: flex; align-items: center; justify-content: center;
+}
+#y2k-content {
+  color: #0f0; font-family: 'Courier New', monospace; font-size: 24px; text-align: center;
+}
+
+/* === Shutdown Screen === */
+#shutdown-screen {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 10000;
+  background: #000; display: flex; align-items: center; justify-content: center; cursor: pointer;
+}
+.shutdown-text { color: #d4880f; font-family: 'Courier New', monospace; text-align: center; }
+
+/* === Mobile Warning === */
+#mobile-warning {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 99999;
+  background: #008080; display: flex; align-items: center; justify-content: center;
+}
+
+/* === Discoveries Window === */
+.egg-item { padding: 3px 8px; font-size: 11px; border-bottom: 1px solid #ddd; }
+.egg-item.locked { color: #999; }
+.egg-item.unlocked { color: #000; font-weight: bold; }
+.egg-counter { font-size: 16px; font-weight: bold; text-align: center; padding: 8px; border-bottom: 2px solid #808080; background: #ffffcc; }
+
+/* === About Windows === */
+.about-body { display: flex; gap: 12px; padding: 12px; }
+.about-flag { font-size: 48px; }
+.about-info p { margin: 3px 0; font-size: 11px; }
+
+/* === Scrollbar styling === */
+::-webkit-scrollbar { width: 16px; }
+::-webkit-scrollbar-track { background: #c0c0c0; border: 1px solid #808080; }
+::-webkit-scrollbar-thumb { background: #c0c0c0; border: 1px outset #fff; }
+::-webkit-scrollbar-button { background: #c0c0c0; border: 1px outset #fff; height: 16px; }
+
+/* === Helpers === */
+.field-row { display: flex; align-items: center; gap: 6px; }
+
+/* === Responsive: mobile warning === */
+@media (max-width: 699px) {
+  #mobile-warning { display: flex !important; }
+}
